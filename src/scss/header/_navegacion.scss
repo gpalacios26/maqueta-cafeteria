@@ -1,0 +1,35 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.nav-principal {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+
+  @include m.tablet {
+    flex-direction: row;
+    margin-top: 0;
+    gap: 1.5rem;
+  }
+
+  a {
+    text-transform: uppercase;
+    text-align: center;
+    color: v.$blanco;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    @include m.tablet {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      color: v.$secundario;
+    }
+
+    &.activo {
+      color: v.$secundario;
+    }
+  }
+}
